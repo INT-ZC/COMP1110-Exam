@@ -33,6 +33,7 @@ public class Q4ArrayList<T> {
     public void remove(int index) {
         if (index < 0 || index >= elements)
             throw new IndexOutOfBoundsException();
+        
         elements--;
         for(int i = index; i < elements; i++)
             values[i] = values[i+1];
