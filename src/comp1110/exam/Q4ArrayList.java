@@ -30,13 +30,12 @@ public class Q4ArrayList<T> {
      *
      * @param index
      */
-    public void remove(int index) {
-        if (index < 0 || index >= elements)
-            throw new IndexOutOfBoundsException();
-        
-        elements--;
-        for(int i = index; i < elements; i++)
-            values[i] = values[i+1];
+    public void remove(int index)
+    {
+    	if (index >= elements || index < 0)
+	        throw new IndexOutOfBoundsException();
+	    System.arraycopy(values,index+1,values,index,values.length-1-index);
+	    elements--;
     }
 
     /**
