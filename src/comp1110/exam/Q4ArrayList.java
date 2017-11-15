@@ -19,10 +19,12 @@ public class Q4ArrayList<T> {
      */
     public void add(T value)
     {
-        elements ++;
-	    T[] tmp = Arrays.copyOf(values, elements);
-	    tmp[elements-1] = value;
-		values = tmp;
+        if (elements == values.length)
+        {
+            T[] tmp = Arrays.copyOf(values,(int)(elements*GROWTH_FACTOR));
+            values = tmp;
+        }
+        values[elements++] = value;
     }
 
     /**
@@ -32,10 +34,11 @@ public class Q4ArrayList<T> {
      */
     public void remove(int index)
     {
-    	if (index >= elements || index < 0)
-	        throw new IndexOutOfBoundsException();
-	    System.arraycopy(values,index+1,values,index,values.length-1-index);
-	    elements--;
+        if (index < 0 || index >= elements)
+            throw new IndexOutOfBoundsException();
+        --elements;
+        for (int i = index; i < elements; ++i)
+            values[i] = values[i+1];
     }
 
     /**
@@ -58,13 +61,11 @@ public class Q4ArrayList<T> {
     /**
      * Reverse the order of the elements of the list.
      */
-    public void reverse() {
-        for (int i = 0; i < elements / 2; i++)
-        {
-            T tmp = values[i];
-            values[i] = values[(elements - 1)-i];
-            values[(elements - 1)-i] = tmp;
-        }
+    public void reverse()
+    {
+        T[] tmp = Arrays.copyOf(values,elements);
+        for (int i = 0; i < elements; ++i)
+            values[i] = tmp[elements-i-1];
     }
 
     /**

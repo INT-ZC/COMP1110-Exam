@@ -13,10 +13,6 @@ public class Q5Hash {
      */
     public static int hash(int value, int buckets)
     {
-        for (int i = 0; i < buckets; i++)
-        {
-            if (value >= 0 && value <= buckets - 1);
-        }
-        return -1; // FIXME Question 5iv: complete this function
+        return Math.abs(value%buckets); // FIXME Question 5iv: complete this function
     }
 }

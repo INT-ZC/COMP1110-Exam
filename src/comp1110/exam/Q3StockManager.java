@@ -16,6 +16,8 @@ public class Q3StockManager {
      */
     static HashMap<String, String>  vn = new HashMap<>(); //vid-name
     static HashMap<String, String>  sv = new HashMap<>(); //sku-vid
+    static HashMap<String, Integer>  sr = new HashMap<>(); //vid-name
+
     public void newVendor(String vid, String name)
     {
         vn.put(vid,name);
@@ -38,6 +40,7 @@ public class Q3StockManager {
         st.put(sku,0);
         sv.put(sku,vid);
         vn.put(sku,null);
+        sr.put(sku,0);
         // FIXME Question 3iib: complete this function
     }
 
@@ -148,7 +151,22 @@ public class Q3StockManager {
      */
     public Map<String, Integer> getStockRequired(String vid)
     {
-        return null;
+        for (int i = 0; i < getSku(vid).size();i++)
+            sr.put(getSku(vid).get(i),st.get(getSku(vid).get(i))-ss.get(getSku(vid).get(i)));
+        return sr;
         // FIXME Question 3iil: complete this function
+    }
+
+    public List<String> getSku (String vid)
+    {
+        List<String> tmp = new ArrayList<>();
+        Iterator iterator = sv.entrySet().iterator();
+        while (iterator.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)iterator.next();
+            if (entry.getValue().equals(vid))
+                tmp.add((String)entry.getKey());
+        }
+        return tmp;
     }
 }

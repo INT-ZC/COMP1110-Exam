@@ -136,6 +136,9 @@ public class Q3SimpleStockManager {
      */
     public double totalStockValue()
     {
-        return 0; // FIXME Question 3ij: complete this function
+        double value = 0;
+        for (Object o : sp.keySet())
+            value += sp.get(o) * ss.get(o);
+        return value; // FIXME Question 3ij: complete this function
     }
 }
