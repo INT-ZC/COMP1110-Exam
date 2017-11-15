@@ -9,6 +9,8 @@ import java.util.Scanner;
  */
 public class Q1Even
 {
+    public Q1Even()
+    {}
     public static int[] even(int n)
     {
         List<Integer> foo = new ArrayList<>();

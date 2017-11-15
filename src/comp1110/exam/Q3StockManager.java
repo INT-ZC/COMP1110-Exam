@@ -156,14 +156,15 @@ public class Q3StockManager {
         return sr;
         // FIXME Question 3iil: complete this function
     }
-
-    public List<String> getSku (String vid)
+    
+    public List<String> getSku(String vid)
     {
         List<String> tmp = new ArrayList<>();
         Iterator iterator = sv.entrySet().iterator();
+        
         while (iterator.hasNext())
         {
-            Map.Entry entry = (Map.Entry)iterator.next();
+            Map.Entry entry = (Map.Entry) iterator.next();
             if (entry.getValue().equals(vid))
                 tmp.add((String)entry.getKey());
         }

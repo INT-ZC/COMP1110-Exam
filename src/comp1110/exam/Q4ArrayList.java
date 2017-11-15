@@ -8,10 +8,10 @@ import java.util.Arrays;
 public class Q4ArrayList<T> {
     private static final int INITIAL_SIZE = 2;
     private static final double GROWTH_FACTOR = 1.5;
-
+    
     T[] values = (T[]) new Object[INITIAL_SIZE];
     int elements = 0;
-
+    
     /**
      * Add a value to the tail of the list.
      *
@@ -19,6 +19,7 @@ public class Q4ArrayList<T> {
      */
     public void add(T value)
     {
+        /* Unimplemented.  Q4 i) [7 Marks] */
         if (elements == values.length)
         {
             T[] tmp = Arrays.copyOf(values,(int)(elements*GROWTH_FACTOR));
@@ -26,7 +27,7 @@ public class Q4ArrayList<T> {
         }
         values[elements++] = value;
     }
-
+    
     /**
      * Remove the value at the specified index from the list.
      *
@@ -34,13 +35,14 @@ public class Q4ArrayList<T> {
      */
     public void remove(int index)
     {
+        /* Unimplemented.  Q4 i) [7 Marks] */
         if (index < 0 || index >= elements)
             throw new IndexOutOfBoundsException();
         --elements;
         for (int i = index; i < elements; ++i)
             values[i] = values[i+1];
     }
-
+    
     /**
      * @param index
      * @return The value at the specified index.
@@ -50,24 +52,25 @@ public class Q4ArrayList<T> {
             throw new IndexOutOfBoundsException();
         return values[index];
     }
-
+    
     /**
      * @return the current size of the list.
      */
     public int size() {
         return elements;
     }
-
+    
     /**
      * Reverse the order of the elements of the list.
      */
     public void reverse()
     {
+        /* Unimplemented. Q4 iii) [6 Marks] */
         T[] tmp = Arrays.copyOf(values,elements);
         for (int i = 0; i < elements; ++i)
             values[i] = tmp[elements-i-1];
     }
-
+    
     /**
      * @return A string representation of the list.
      */

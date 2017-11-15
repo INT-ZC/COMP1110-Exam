@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Q3SimpleStockManager {
     
-    static HashMap<String, String>  sn = new HashMap<>(); //sku-number
+    static HashMap<String, String>  sn = new HashMap<>(); //sku-name
     static HashMap<String, Double>  sp = new HashMap<>(); //sku-price
     static HashMap<String, Integer> ss = new HashMap<>(); //sku-stock
     static HashMap<String, Integer> st = new HashMap<>(); //sku-target_stock

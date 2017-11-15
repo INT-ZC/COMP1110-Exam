@@ -38,15 +38,13 @@ public class Q1Fib {
     /*
     public static int fib(int n)
     {
-        int f = 0;
         if (n == 0)
             return 0;
-        else if (n == 1 || n == 2)
+        else if (n == 1)
             return 1;
-        else
-            f += fib(n - 1)+fib(n - 2);
-        return f;
+        return fib(n - 1)+fib(n - 2);
 
     }
     */
+    
 }
